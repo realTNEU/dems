@@ -199,3 +199,4 @@ const EventsTable = ({ events, filters, onPageChange, loading }) => {
 };
 
 export default EventsTable;
+

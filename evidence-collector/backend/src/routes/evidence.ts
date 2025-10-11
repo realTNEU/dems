@@ -14,3 +14,4 @@ router.get('/metrics/summary', getMetricsSummary);
 router.get('/ips/top', getTopIPs);
 
 export default router;
+

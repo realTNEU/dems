@@ -44,3 +44,4 @@ export const authenticateCollector = (req: AuthenticatedRequest, res: Response, 
   req.collectorId = apiKey;
   next();
 };
+
