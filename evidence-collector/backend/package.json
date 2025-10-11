@@ -7,7 +7,7 @@
     "start": "node dist/index.js",
     "dev": "nodemon src/index.ts",
     "build": "tsc",
-    "test": "jest"
+    "render-start": "npm run build && npm start"
   },
   "keywords": [],
   "author": "",
@@ -24,13 +24,9 @@
   "devDependencies": {
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
-    "@types/jest": "^30.0.0",
     "@types/morgan": "^1.9.10",
     "@types/node": "^24.7.1",
-    "@types/supertest": "^6.0.3",
-    "jest": "^30.2.0",
     "nodemon": "^3.1.10",
-    "supertest": "^7.1.4",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   }

@@ -11,8 +11,11 @@ app.use(morgan('combined'));
 
 // Don't trust proxy - handle X-Forwarded-For manually
 
-// Connect to MongoDB
-connectDB();
+// Connect to MongoDB (optional)
+let mongoConnected = false;
+connectDB().then(connected => {
+  mongoConnected = connected;
+});
 
 // Custom logging middleware
 const logToMongoDB = (req, res, next) => {
@@ -40,11 +43,13 @@ const logToMongoDB = (req, res, next) => {
     // Log to console (structured JSON)
     console.log(JSON.stringify(logEntry));
     
-    // Save to MongoDB
-    const logDocument = new LogEntry(logEntry);
-    logDocument.save().catch(error => {
-      console.error('Error saving log to MongoDB:', error);
-    });
+    // Save to MongoDB (only if connected)
+    if (mongoConnected) {
+      const logDocument = new LogEntry(logEntry);
+      logDocument.save().catch(error => {
+        console.error('Error saving log to MongoDB:', error);
+      });
+    }
     
     originalSend.call(this, data);
   };
