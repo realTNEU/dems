@@ -1105,3 +1105,51 @@
 {"level":"WARN","timestamp":"2025-10-11T01:37:19.044Z","message":"Re-added 1000 events to buffer for retry"}
 {"level":"ERROR","timestamp":"2025-10-11T01:37:20.044Z","message":"Failed to send evidence to backend","error":"Error"}
 {"level":"WARN","timestamp":"2025-10-11T01:37:20.045Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:21.046Z","message":"Failed to send evidence to backend","error":"Error"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:21.046Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:21.965Z","message":"Failed to send evidence to backend","error":"Error"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:21.965Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:22.046Z","message":"Failed to send evidence to backend","error":"Error"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:22.046Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:23.046Z","message":"Failed to send evidence to backend","error":"Error"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:23.046Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:24.045Z","message":"Failed to send evidence to backend","error":"Error"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:24.046Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:25.047Z","message":"Failed to send evidence to backend","error":"Error"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:25.048Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:26.046Z","message":"Failed to send evidence to backend","error":"Error"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:26.047Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:26.969Z","message":"Failed to send evidence to backend","error":"Error"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:26.969Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:27.046Z","message":"Failed to send evidence to backend","error":"Error"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:27.047Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:28.048Z","message":"Failed to send evidence to backend","error":"Error"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:28.048Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:29.047Z","message":"Failed to send evidence to backend","error":"Error"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:29.047Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:30.046Z","message":"Failed to send evidence to backend","error":"Error"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:30.047Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:31.047Z","message":"Failed to send evidence to backend","error":"Error"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:31.047Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:31.971Z","message":"Failed to send evidence to backend","error":"Error"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:31.972Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:32.048Z","message":"Failed to send evidence to backend","error":"Error"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:32.048Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:33.048Z","message":"Failed to send evidence to backend","error":"Error"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:33.049Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:34.048Z","message":"Failed to send evidence to backend","error":"Error"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:34.049Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:35.048Z","message":"Failed to send evidence to backend","error":"Error"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:35.049Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:36.048Z","message":"Failed to send evidence to backend","error":"Error"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:36.048Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:36.975Z","message":"Failed to send evidence to backend","error":"Error"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:36.976Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:37.048Z","message":"Failed to send evidence to backend","error":"Error"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:37.048Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:38.049Z","message":"Failed to send evidence to backend","error":"Error"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:38.049Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:39.050Z","message":"Failed to send evidence to backend","error":"Error"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:39.050Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:40.050Z","message":"Failed to send evidence to backend","error":"Error"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:40.050Z","message":"Re-added 1000 events to buffer for retry"}
