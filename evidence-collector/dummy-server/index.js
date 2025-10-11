@@ -1,7 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
-const fs = require('fs-extra');
-const path = require('path');
+const { connectDB, LogEntry } = require('./database');
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -12,22 +11,18 @@ app.use(morgan('combined'));
 
 // Don't trust proxy - handle X-Forwarded-For manually
 
-// Create logs directory
-const logsDir = path.join(__dirname, 'logs');
-fs.ensureDirSync(logsDir);
+// Connect to MongoDB
+connectDB();
 
 // Custom logging middleware
-const logToFile = (req, res, next) => {
+const logToMongoDB = (req, res, next) => {
   const originalSend = res.send;
   
   res.send = function(data) {
     // Get IP from X-Forwarded-For header first, then fallback to connection remote address
     let sourceIP = req.connection.remoteAddress;
-    console.log('X-Forwarded-For header:', req.headers['x-forwarded-for']);
-    console.log('Connection remote address:', req.connection.remoteAddress);
     if (req.headers['x-forwarded-for']) {
       sourceIP = req.headers['x-forwarded-for'].split(',')[0].trim();
-      console.log('Using forwarded IP:', sourceIP);
     }
     
     const logEntry = {
@@ -45,9 +40,11 @@ const logToFile = (req, res, next) => {
     // Log to console (structured JSON)
     console.log(JSON.stringify(logEntry));
     
-    // Log to file
-    const logFile = path.join(logsDir, 'access.log');
-    fs.appendFileSync(logFile, JSON.stringify(logEntry) + '\n');
+    // Save to MongoDB
+    const logDocument = new LogEntry(logEntry);
+    logDocument.save().catch(error => {
+      console.error('Error saving log to MongoDB:', error);
+    });
     
     originalSend.call(this, data);
   };
@@ -56,7 +53,7 @@ const logToFile = (req, res, next) => {
   next();
 };
 
-app.use(logToFile);
+app.use(logToMongoDB);
 
 // Helper function to create handlers with variation
 function makeHandler(i) {
@@ -170,7 +167,7 @@ app.listen(PORT, () => {
   console.log(`Dummy server listening on port ${PORT}`);
   console.log(`Health check: http://localhost:${PORT}/health`);
   console.log(`Total endpoints: ${endpoints.length + 5}`);
-  console.log(`Access logs: ${logsDir}/access.log`);
+  console.log(`Logs saved to MongoDB`);
 });
 
 // Graceful shutdown

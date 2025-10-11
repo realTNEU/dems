@@ -1,49 +1,6 @@
 import { Request, Response } from 'express';
-import { Evidence, IEvidence } from '../models/Evidence';
-import { BulkEvidenceRequest } from '../middleware/validation';
+import { LogEntry, ILogEntry } from '../models/LogEntry';
 
-export const bulkCreateEvidence = async (req: Request, res: Response) => {
-  try {
-    const { events }: BulkEvidenceRequest = req.body;
-    
-    const evidenceDocs: Partial<IEvidence>[] = events.map(event => ({
-      timestamp: new Date(event.timestamp),
-      request_id: event.request_id,
-      method: event.method,
-      path: event.path,
-      query: event.query,
-      status: event.status,
-      response_time_ms: event.response_time_ms,
-      source_ip: event.source_ip,
-      source_port: event.source_port,
-      headers: event.headers,
-      body_hash: event.body_hash,
-      server_name: event.server_name,
-      note: event.note
-    }));
-
-    const result = await Evidence.insertMany(evidenceDocs, { ordered: false });
-    
-    res.status(200).json({
-      accepted: result.length,
-      rejected: events.length - result.length
-    });
-  } catch (error: any) {
-    console.error('Error creating evidence:', error);
-    
-    if (error.code === 11000) {
-      // Duplicate key error
-      const accepted = error.result?.insertedCount || 0;
-      const { events }: BulkEvidenceRequest = req.body;
-      res.status(200).json({
-        accepted,
-        rejected: events.length - accepted
-      });
-    } else {
-      res.status(500).json({ error: 'Internal server error' });
-    }
-  }
-};
 
 export const getEvents = async (req: Request, res: Response) => {
   try {
@@ -60,21 +17,44 @@ export const getEvents = async (req: Request, res: Response) => {
     const query: any = {};
 
     if (path) query.path = { $regex: path as string, $options: 'i' };
-    if (ip) query.source_ip = ip as string;
+    if (ip) query.sourceIP = ip as string;
     if (method) query.method = method as string;
     
     if (from || to) {
-      query.timestamp = {};
-      if (from) query.timestamp.$gte = new Date(from as string);
-      if (to) query.timestamp.$lte = new Date(to as string);
+      query.createdAt = {};
+      if (from) query.createdAt.$gte = new Date(from as string);
+      if (to) query.createdAt.$lte = new Date(to as string);
     }
 
-    const events = await Evidence.find(query)
-      .sort({ timestamp: -1 })
+    const logs = await LogEntry.find(query)
+      .sort({ createdAt: -1 })
       .limit(parseInt(limit as string))
       .skip(parseInt(offset as string));
 
-    const total = await Evidence.countDocuments(query);
+    const total = await LogEntry.countDocuments(query);
+
+    // Transform logs to match the expected evidence format
+    const events = logs.map(log => ({
+      _id: log._id,
+      timestamp: log.timestamp,
+      request_id: log._id?.toString() || '',
+      method: log.method,
+      path: log.path,
+      query: JSON.stringify(log.query),
+      status: log.status,
+      response_time_ms: log.responseTime,
+      source_ip: log.sourceIP,
+      headers: {
+        'user-agent': log.userAgent
+      },
+      body_hash: log.body ? require('crypto').createHash('sha256').update(JSON.stringify(log.body)).digest('hex') : undefined,
+      server_name: 'dummy-server',
+      note: 'Collected from MongoDB logs',
+      created_at: log.createdAt,
+      createdAt: log.createdAt,
+      updatedAt: log.createdAt,
+      __v: 0
+    }));
 
     res.json({
       events,
@@ -94,9 +74,9 @@ export const getMetricsSummary = async (req: Request, res: Response) => {
 
     const matchQuery: any = {};
     if (from || to) {
-      matchQuery.timestamp = {};
-      if (from) matchQuery.timestamp.$gte = new Date(from as string);
-      if (to) matchQuery.timestamp.$lte = new Date(to as string);
+      matchQuery.createdAt = {};
+      if (from) matchQuery.createdAt.$gte = new Date(from as string);
+      if (to) matchQuery.createdAt.$lte = new Date(to as string);
     }
 
     const groupFormat = groupBy === 'day' ? '%Y-%m-%d' : '%Y-%m-%d %H:00:00';
@@ -106,11 +86,11 @@ export const getMetricsSummary = async (req: Request, res: Response) => {
       {
         $group: {
           _id: {
-            $dateToString: { format: groupFormat, date: '$timestamp' }
+            $dateToString: { format: groupFormat, date: '$createdAt' }
           },
           totalRequests: { $sum: 1 },
-          avgResponseTime: { $avg: '$response_time_ms' },
-          uniqueIPs: { $addToSet: '$source_ip' },
+          avgResponseTime: { $avg: '$responseTime' },
+          uniqueIPs: { $addToSet: '$sourceIP' },
           statusCodes: { $push: '$status' }
         }
       },
@@ -151,7 +131,7 @@ export const getMetricsSummary = async (req: Request, res: Response) => {
       { $sort: { _id: 1 as 1 } }
     ];
 
-    const metrics = await Evidence.aggregate(pipeline);
+    const metrics = await LogEntry.aggregate(pipeline);
 
     res.json({ metrics });
   } catch (error) {
@@ -166,19 +146,19 @@ export const getTopIPs = async (req: Request, res: Response) => {
 
     const matchQuery: any = {};
     if (from || to) {
-      matchQuery.timestamp = {};
-      if (from) matchQuery.timestamp.$gte = new Date(from as string);
-      if (to) matchQuery.timestamp.$lte = new Date(to as string);
+      matchQuery.createdAt = {};
+      if (from) matchQuery.createdAt.$gte = new Date(from as string);
+      if (to) matchQuery.createdAt.$lte = new Date(to as string);
     }
 
     const pipeline = [
       { $match: matchQuery },
       {
         $group: {
-          _id: '$source_ip',
+          _id: '$sourceIP',
           requestCount: { $sum: 1 },
-          avgResponseTime: { $avg: '$response_time_ms' },
-          lastSeen: { $max: '$timestamp' },
+          avgResponseTime: { $avg: '$responseTime' },
+          lastSeen: { $max: '$createdAt' },
           statusCodes: { $push: '$status' }
         }
       },
@@ -205,7 +185,7 @@ export const getTopIPs = async (req: Request, res: Response) => {
       { $limit: parseInt(limit as string) }
     ];
 
-    const topIPs = await Evidence.aggregate(pipeline);
+    const topIPs = await LogEntry.aggregate(pipeline);
 
     res.json({ topIPs });
   } catch (error) {

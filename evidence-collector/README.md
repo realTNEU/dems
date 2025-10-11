@@ -16,23 +16,14 @@ This application provides a complete evidence collection and analysis system wit
 
 ```
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Dummy Server  │    │ Traffic Generator│    │    Collector   │
-│   (Port 4000)   │◄───┤   (Random RPS)  │    │  (Log Tailer)  │
+│   Dummy Server  │    │    Backend      │    │    Frontend     │
+│   (Port 4000)   │───▶│   (Port 3000)   │◀───│   (Port 5173)   │
 └─────────────────┘    └─────────────────┘    └─────────────────┘
-         │                                              │
-         │ Logs                                        │ Evidence
-         ▼                                              ▼
-┌─────────────────┐                            ┌─────────────────┐
-│   Access Logs   │                            │    Backend      │
-│   (JSON Format) │                            │   (Port 3000)   │
-└─────────────────┘                            └─────────────────┘
-                                                        │
-                                                        │ API
-                                                        ▼
-                                               ┌─────────────────┐
-                                               │   Frontend      │
-                                               │   (Port 5173)   │
-                                               └─────────────────┘
+                                │
+                                ▼
+                        ┌─────────────────┐
+                        │    MongoDB      │
+                        └─────────────────┘
 ```
 
 ## 🚀 Quick Start (Windows)
@@ -74,17 +65,9 @@ This application provides a complete evidence collection and analysis system wit
    ```
    - Dummy server will start on http://localhost:4000
    - Health check: http://localhost:4000/health
-   - Creates `logs/access.log` file
+   - Logs directly to MongoDB
 
-5. **Start Collector (Terminal 3)**
-   ```bash
-   cd collector
-   npm install
-   npm run dev -- --log-file ../dummy-server/logs/access.log
-   ```
-   - Collector monitors the log file and sends evidence to backend
-
-6. **Start Frontend (Terminal 4)**
+5. **Start Frontend (Terminal 3)**
    ```bash
    cd frontend
    npm install
@@ -93,7 +76,7 @@ This application provides a complete evidence collection and analysis system wit
    - Frontend will start on http://localhost:5173
    - Open browser to view the dashboard
 
-7. **Generate Traffic (Terminal 5 - Optional)**
+6. **Generate Traffic (Terminal 4 - Optional)**
    ```bash
    cd traffic-gen
    npm install
@@ -134,17 +117,6 @@ COLLECTOR_API_KEY=default-collector-key
 NODE_ENV=development
 ```
 
-#### Collector
-```env
-BACKEND_URL=http://localhost:3000
-API_KEY=default-collector-key
-BATCH_SIZE=50
-FLUSH_INTERVAL=5000
-LOG_FILE=/path/to/access.log
-SERVER_NAME=my-server
-MODE=log-tail
-```
-
 #### Traffic Generator
 ```env
 SERVER_URL=http://localhost:4000
@@ -153,24 +125,8 @@ CONCURRENCY=5
 DURATION=300
 ```
 
-### Collector Modes
-
-#### 1. Log Tail Mode
-Monitors log files for new entries and processes them:
-```bash
-npm run dev -- --mode log-tail --log-file /var/log/access.log
-```
-
-#### 2. Middleware Mode
-Integrates with Express applications:
-```bash
-npm run dev -- --mode middleware --port 8080
-```
 
 ## 📡 API Endpoints
-
-### Evidence Collection
-- `POST /api/evidence/bulk` - Submit evidence events (requires authentication)
 
 ### Data Retrieval
 - `GET /api/evidence/events` - Get filtered events with pagination
@@ -179,7 +135,6 @@ npm run dev -- --mode middleware --port 8080
 
 ### Health Checks
 - `GET /health` - Backend health check
-- `GET /collector/health` - Collector health check
 
 ## 🧪 Testing
 
@@ -201,9 +156,9 @@ npm run test:integration
 
 ## 🚀 Development Commands (Windows)
 
-### Manual Start (5 terminals)
+### Manual Start (4 terminals)
 
-Open 5 separate PowerShell or Command Prompt windows and run:
+Open 4 separate PowerShell or Command Prompt windows and run:
 
 ```powershell
 # Terminal 1: Backend
@@ -216,17 +171,12 @@ cd evidence-collector\dummy-server
 npm install
 npm start
 
-# Terminal 3: Collector
-cd evidence-collector\collector
-npm install
-npm run dev -- --log-file ../dummy-server/logs/access.log
-
-# Terminal 4: Frontend
+# Terminal 3: Frontend
 cd evidence-collector\frontend
 npm install
 npm run dev
 
-# Terminal 5: Traffic Generator (optional)
+# Terminal 4: Traffic Generator (optional)
 cd evidence-collector\traffic-gen
 npm install
 npm start
@@ -251,7 +201,6 @@ evidence-collector/
 │   │   ├── controllers/     # API controllers
 │   │   ├── models/         # MongoDB models
 │   │   ├── routes/         # Express routes
-│   │   ├── middleware/     # Auth & validation
 │   │   └── utils/         # Database utilities
 │   └── __tests__/         # Test files
 ├── frontend/               # React Vite application
@@ -259,23 +208,17 @@ evidence-collector/
 │   │   ├── components/    # React components
 │   │   ├── services/     # API services
 │   │   └── utils/        # Utility functions
-├── collector/             # TypeScript collector
-│   ├── src/
-│   │   ├── collector.ts   # Main collector class
-│   │   ├── middleware.ts  # Express middleware
-│   │   └── logTailer.ts  # Log file monitor
 ├── dummy-server/          # Express test server
 ├── traffic-gen/           # Traffic generator
-└── env.example           # Environment variables example
+└── .env                  # Environment variables
 ```
 
 ## 🔒 Security Considerations
 
-- **API Authentication**: HMAC signatures prevent replay attacks
 - **Data Redaction**: Sensitive headers are automatically redacted
 - **Body Hashing**: Request bodies are hashed instead of stored
-- **Rate Limiting**: Built-in protection against abuse
 - **Input Validation**: All inputs are validated and sanitized
+- **CORS Protection**: Cross-origin requests are properly configured
 
 ## 🚨 Troubleshooting
 
@@ -301,14 +244,14 @@ evidence-collector/
    npm run dev
    ```
 
-3. **Collector Not Sending Data**
+3. **No Data in Dashboard**
    ```powershell
-   # Check collector logs
-   cd collector
-   npm run dev
+   # Check if traffic generator is running
+   cd traffic-gen
+   npm start
    
-   # Verify log file exists
-   dir ..\dummy-server\logs\
+   # Verify dummy server is receiving requests
+   curl http://localhost:4000/health
    ```
 
 4. **Port Conflicts**

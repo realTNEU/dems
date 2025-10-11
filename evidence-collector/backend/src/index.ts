@@ -4,7 +4,7 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import dotenv from 'dotenv';
 import { connectDatabase } from './utils/database';
-import evidenceRoutes from './routes/evidence';
+import logRoutes from './routes/logs';
 
 // Load environment variables
 dotenv.config();
@@ -20,7 +20,7 @@ app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 
 // Routes
-app.use('/api/evidence', evidenceRoutes);
+app.use('/api/evidence', logRoutes);
 
 // Health check endpoint
 app.get('/health', (req, res) => {
