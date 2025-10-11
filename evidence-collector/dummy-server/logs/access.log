@@ -781,3 +781,327 @@
 {"level":"WARN","timestamp":"2025-10-11T01:35:04.004Z","message":"Re-added 728 events to buffer for retry"}
 {"level":"ERROR","timestamp":"2025-10-11T01:35:05.003Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
 {"level":"WARN","timestamp":"2025-10-11T01:35:05.003Z","message":"Re-added 730 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:06.004Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:06.004Z","message":"Re-added 732 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:06.956Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:06.957Z","message":"Re-added 733 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:07.005Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:07.006Z","message":"Re-added 734 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:08.004Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:08.005Z","message":"Re-added 738 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:09.005Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:09.005Z","message":"Re-added 740 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:10.003Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:10.003Z","message":"Re-added 742 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:11.003Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:11.003Z","message":"Re-added 744 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:11.956Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:11.957Z","message":"Re-added 745 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:12.005Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:12.006Z","message":"Re-added 746 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:13.004Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:13.005Z","message":"Re-added 750 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:14.005Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:14.005Z","message":"Re-added 752 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:15.004Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:15.005Z","message":"Re-added 754 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:16.004Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:16.004Z","message":"Re-added 756 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:16.957Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:16.958Z","message":"Re-added 757 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:17.005Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:17.005Z","message":"Re-added 758 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:18.006Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:18.006Z","message":"Re-added 762 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:19.006Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:19.006Z","message":"Re-added 764 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:20.007Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:20.007Z","message":"Re-added 766 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:21.008Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:21.008Z","message":"Re-added 768 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:21.958Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:21.958Z","message":"Re-added 769 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:22.009Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:22.010Z","message":"Re-added 770 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:23.007Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:23.008Z","message":"Re-added 774 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:24.008Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:24.008Z","message":"Re-added 776 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:25.010Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:25.010Z","message":"Re-added 778 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:26.011Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:26.012Z","message":"Re-added 780 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:26.959Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:26.960Z","message":"Re-added 781 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:27.015Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:27.016Z","message":"Re-added 782 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:28.015Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:28.016Z","message":"Re-added 786 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:29.019Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:29.020Z","message":"Re-added 788 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:30.015Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:30.016Z","message":"Re-added 790 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:31.014Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:31.015Z","message":"Re-added 792 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:31.961Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:31.961Z","message":"Re-added 793 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:32.016Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:32.017Z","message":"Re-added 794 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:33.016Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:33.016Z","message":"Re-added 798 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:34.015Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:34.016Z","message":"Re-added 800 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:35.019Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:35.019Z","message":"Re-added 802 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:36.021Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:36.021Z","message":"Re-added 804 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:36.958Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:36.959Z","message":"Re-added 805 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:37.018Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:37.019Z","message":"Re-added 806 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:38.018Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:38.019Z","message":"Re-added 810 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:39.016Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:39.017Z","message":"Re-added 812 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:40.018Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:40.019Z","message":"Re-added 814 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:41.017Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:41.017Z","message":"Re-added 816 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:41.959Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:41.959Z","message":"Re-added 817 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:42.017Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:42.018Z","message":"Re-added 818 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:43.016Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:43.017Z","message":"Re-added 822 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:44.017Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:44.017Z","message":"Re-added 824 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:45.018Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:45.018Z","message":"Re-added 826 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:46.018Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:46.018Z","message":"Re-added 828 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:46.959Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:46.960Z","message":"Re-added 829 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:47.018Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:47.019Z","message":"Re-added 830 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:48.017Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:48.018Z","message":"Re-added 834 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:49.017Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:49.018Z","message":"Re-added 836 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:50.018Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:50.018Z","message":"Re-added 838 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:51.017Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:51.018Z","message":"Re-added 840 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:51.959Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:51.960Z","message":"Re-added 841 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:52.020Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:52.020Z","message":"Re-added 842 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:53.019Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:53.019Z","message":"Re-added 846 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:54.018Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:54.019Z","message":"Re-added 848 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:55.019Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:55.019Z","message":"Re-added 850 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:56.018Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:56.019Z","message":"Re-added 852 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:56.958Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:56.959Z","message":"Re-added 853 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:57.019Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:57.020Z","message":"Re-added 854 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:58.018Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:58.018Z","message":"Re-added 858 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:35:59.017Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:35:59.018Z","message":"Re-added 860 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:00.018Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:00.019Z","message":"Re-added 862 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:01.019Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:01.019Z","message":"Re-added 864 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:01.960Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:01.960Z","message":"Re-added 865 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:02.019Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:02.019Z","message":"Re-added 866 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:03.019Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:03.019Z","message":"Re-added 870 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:04.019Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:04.020Z","message":"Re-added 872 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:05.021Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:05.021Z","message":"Re-added 874 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:06.020Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:06.020Z","message":"Re-added 876 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:06.961Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:06.962Z","message":"Re-added 877 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:07.019Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:07.020Z","message":"Re-added 878 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:08.021Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:08.021Z","message":"Re-added 882 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:09.020Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:09.021Z","message":"Re-added 884 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:10.020Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:10.020Z","message":"Re-added 886 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:11.019Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:11.019Z","message":"Re-added 888 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:11.961Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:11.962Z","message":"Re-added 889 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:12.020Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:12.020Z","message":"Re-added 890 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:13.021Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:13.021Z","message":"Re-added 894 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:14.021Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:14.022Z","message":"Re-added 896 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:15.021Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:15.021Z","message":"Re-added 898 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:16.022Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:16.023Z","message":"Re-added 900 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:16.962Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:16.963Z","message":"Re-added 901 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:17.022Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:17.023Z","message":"Re-added 902 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:18.022Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:18.022Z","message":"Re-added 906 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:19.022Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:19.023Z","message":"Re-added 908 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:20.023Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:20.023Z","message":"Re-added 910 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:21.024Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:21.025Z","message":"Re-added 912 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:21.962Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:21.962Z","message":"Re-added 913 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:22.025Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:22.026Z","message":"Re-added 914 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:23.025Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:23.026Z","message":"Re-added 918 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:24.026Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:24.027Z","message":"Re-added 920 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:25.025Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:25.026Z","message":"Re-added 922 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:26.027Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:26.027Z","message":"Re-added 924 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:26.962Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:26.963Z","message":"Re-added 925 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:27.027Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:27.028Z","message":"Re-added 926 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:28.027Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:28.028Z","message":"Re-added 930 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:29.027Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:29.028Z","message":"Re-added 932 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:30.028Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:30.029Z","message":"Re-added 934 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:31.028Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:31.029Z","message":"Re-added 936 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:31.962Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:31.963Z","message":"Re-added 937 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:32.027Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:32.028Z","message":"Re-added 938 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:33.028Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:33.028Z","message":"Re-added 942 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:34.028Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:34.029Z","message":"Re-added 944 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:35.029Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:35.029Z","message":"Re-added 946 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:36.029Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:36.030Z","message":"Re-added 948 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:36.962Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:36.963Z","message":"Re-added 949 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:37.028Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:37.029Z","message":"Re-added 950 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:38.029Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:38.030Z","message":"Re-added 954 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:39.029Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:39.030Z","message":"Re-added 956 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:40.029Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:40.029Z","message":"Re-added 958 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:41.029Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:41.030Z","message":"Re-added 960 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:41.962Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:41.963Z","message":"Re-added 961 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:42.029Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:42.030Z","message":"Re-added 962 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:43.030Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:43.030Z","message":"Re-added 966 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:44.030Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:44.030Z","message":"Re-added 968 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:45.029Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:45.030Z","message":"Re-added 970 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:46.032Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:46.032Z","message":"Re-added 972 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:46.962Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:46.962Z","message":"Re-added 973 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:47.033Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:47.033Z","message":"Re-added 974 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:48.032Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:48.033Z","message":"Re-added 978 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:49.034Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:49.035Z","message":"Re-added 980 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:50.034Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:50.034Z","message":"Re-added 982 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:51.035Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:51.035Z","message":"Re-added 984 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:51.963Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:51.963Z","message":"Re-added 985 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:52.037Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:52.037Z","message":"Re-added 986 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:53.036Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:53.037Z","message":"Re-added 990 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:54.036Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:54.037Z","message":"Re-added 992 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:55.038Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:55.038Z","message":"Re-added 994 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:56.037Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:56.038Z","message":"Re-added 996 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:56.964Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:56.964Z","message":"Re-added 997 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:57.037Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:57.038Z","message":"Re-added 998 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:58.038Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:58.039Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:36:59.038Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:36:59.038Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:00.038Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:00.039Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:01.039Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:01.039Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:01.963Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:01.963Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:02.037Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:02.038Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:03.039Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:03.040Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:04.040Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:04.040Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:05.040Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:05.041Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:06.041Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:06.042Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:06.963Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:06.964Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:07.044Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:07.044Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:08.042Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:08.043Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:09.043Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:09.043Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:10.043Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:10.043Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:11.044Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:11.044Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:11.963Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:11.963Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:12.044Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:12.044Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:13.043Z","message":"Failed to send evidence to backend","error":"Request failed with status code 400"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:13.044Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:14.050Z","message":"Failed to send evidence to backend","error":"Error"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:14.050Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:15.044Z","message":"Failed to send evidence to backend","error":"Error"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:15.045Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:16.044Z","message":"Failed to send evidence to backend","error":"Error"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:16.044Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:16.963Z","message":"Failed to send evidence to backend","error":"Error"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:16.964Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:17.044Z","message":"Failed to send evidence to backend","error":"Error"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:17.044Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:18.043Z","message":"Failed to send evidence to backend","error":"Error"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:18.044Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:19.043Z","message":"Failed to send evidence to backend","error":"Error"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:19.044Z","message":"Re-added 1000 events to buffer for retry"}
+{"level":"ERROR","timestamp":"2025-10-11T01:37:20.044Z","message":"Failed to send evidence to backend","error":"Error"}
+{"level":"WARN","timestamp":"2025-10-11T01:37:20.045Z","message":"Re-added 1000 events to buffer for retry"}
