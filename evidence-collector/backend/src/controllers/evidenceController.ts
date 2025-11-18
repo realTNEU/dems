@@ -40,14 +40,14 @@ export const getEvents = async (req: Request, res: Response) => {
       request_id: log._id?.toString() || '',
       method: log.method,
       path: log.path,
-      query: JSON.stringify(log.query),
+      params: log.query || {},
       status: log.status,
       response_time_ms: log.responseTime,
       source_ip: log.sourceIP,
-      headers: {
-        'user-agent': log.userAgent
-      },
+      headers: log.headers || { 'user-agent': log.userAgent },
       body_hash: log.body ? require('crypto').createHash('sha256').update(JSON.stringify(log.body)).digest('hex') : undefined,
+      has_media: !!log.hasMedia,
+      body: log.body ? (typeof log.body === 'object' ? log.body : String(log.body)) : undefined,
       server_name: 'dummy-server',
       note: 'Collected from MongoDB logs',
       created_at: log.createdAt,

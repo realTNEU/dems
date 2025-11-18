@@ -28,6 +28,16 @@ const logToMongoDB = (req, res, next) => {
       sourceIP = req.headers['x-forwarded-for'].split(',')[0].trim();
     }
     
+    // Redact sensitive headers and capture a small set of them
+    const redactHeaders = { ...req.headers };
+    ['authorization', 'cookie', 'set-cookie'].forEach(h => {
+      if (redactHeaders[h]) delete redactHeaders[h];
+    });
+
+    // Detect simple media presence: content-type or body containing a 'file' key
+    const contentType = req.get('content-type') || '';
+    const hasMedia = contentType.includes('multipart/form-data') || contentType.startsWith('image/') || (req.body && typeof req.body === 'object' && ('file' in req.body || 'media' in req.body));
+
     const logEntry = {
       timestamp: new Date().toISOString(),
       method: req.method,
@@ -37,7 +47,9 @@ const logToMongoDB = (req, res, next) => {
       responseTime: Date.now() - req.startTime,
       sourceIP: sourceIP,
       userAgent: req.get('User-Agent'),
-      body: req.body || null
+      body: req.body || null,
+      headers: redactHeaders,
+      hasMedia: hasMedia
     };
     
     // Log to console (structured JSON)

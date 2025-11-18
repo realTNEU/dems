@@ -53,6 +53,14 @@ const logEntrySchema = new mongoose.Schema({
     type: mongoose.Schema.Types.Mixed,
     default: null
   },
+  headers: {
+    type: mongoose.Schema.Types.Mixed,
+    default: {}
+  },
+  hasMedia: {
+    type: Boolean,
+    default: false
+  },
   createdAt: {
     type: Date,
     default: Date.now

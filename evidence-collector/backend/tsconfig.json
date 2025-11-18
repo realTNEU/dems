@@ -4,7 +4,7 @@
     "lib": ["es2020", "dom"],
     "module": "commonjs",
     "outDir": "./dist",
-    "rootDir": "./src",
+  "rootDir": "./",
     "strict": false,
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -16,9 +16,9 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "types": ["node"],
+  "types": ["node", "jest"],
     "noImplicitAny": false
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "__tests__/**/*"],
   "exclude": ["node_modules", "dist"]
 }

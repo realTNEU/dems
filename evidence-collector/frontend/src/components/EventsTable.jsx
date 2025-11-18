@@ -4,6 +4,9 @@ import { exportEvents } from '../services/api';
 const EventsTable = ({ events, filters, onPageChange, loading }) => {
   const [selectedEvents, setSelectedEvents] = useState(new Set());
   const [exporting, setExporting] = useState(false);
+  const [exportFormat, setExportFormat] = useState('csv');
+  const [exportLimit, setExportLimit] = useState(filters.limit || 100);
+  const [activeEvent, setActiveEvent] = useState(null);
 
   const handleSelectAll = (checked) => {
     if (checked) {
@@ -26,7 +29,8 @@ const EventsTable = ({ events, filters, onPageChange, loading }) => {
   const handleExport = async (format) => {
     try {
       setExporting(true);
-      const blob = await exportEvents(filters, format);
+      const exportFilters = { ...filters, limit: exportLimit };
+      const blob = await exportEvents(exportFilters, format);
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
@@ -83,20 +87,33 @@ const EventsTable = ({ events, filters, onPageChange, loading }) => {
         <h2 className="text-lg font-semibold text-dark-100">
           Events ({events.length})
         </h2>
-        <div className="flex space-x-2">
+        <div className="flex items-center space-x-2">
+          <label className="text-sm text-dark-300">Format</label>
+          <select
+            value={exportFormat}
+            onChange={(e) => setExportFormat(e.target.value)}
+            className="input text-sm"
+          >
+            <option value="csv">CSV</option>
+            <option value="json">JSON</option>
+          </select>
+
+          <label className="text-sm text-dark-300">Limit</label>
+          <input
+            type="number"
+            min={1}
+            max={10000}
+            value={exportLimit}
+            onChange={(e) => setExportLimit(Number(e.target.value))}
+            className="input w-24 text-sm"
+          />
+
           <button
-            onClick={() => handleExport('csv')}
+            onClick={() => handleExport(exportFormat)}
             disabled={exporting}
             className="btn-secondary text-sm"
           >
-            {exporting ? 'Exporting...' : 'Export CSV'}
-          </button>
-          <button
-            onClick={() => handleExport('json')}
-            disabled={exporting}
-            className="btn-secondary text-sm"
-          >
-            {exporting ? 'Exporting...' : 'Export JSON'}
+            {exporting ? 'Exporting...' : `Export ${exportFormat.toUpperCase()}`}
           </button>
         </div>
       </div>
@@ -130,12 +147,13 @@ const EventsTable = ({ events, filters, onPageChange, loading }) => {
               </thead>
               <tbody>
                 {events.map((event) => (
-                  <tr key={event._id} className="hover:bg-dark-800">
+                  <tr key={event._id} className="hover:bg-dark-800 cursor-pointer" onClick={() => setActiveEvent(event)}>
                     <td>
                       <input
                         type="checkbox"
                         checked={selectedEvents.has(event._id)}
                         onChange={(e) => handleSelectEvent(event._id, e.target.checked)}
+                        onClick={(e) => e.stopPropagation()}
                         className="rounded border-dark-600 bg-dark-800 text-blue-600 focus:ring-blue-500"
                       />
                     </td>
@@ -169,6 +187,47 @@ const EventsTable = ({ events, filters, onPageChange, loading }) => {
               </tbody>
             </table>
           </div>
+
+          {/* Event details modal */}
+          {activeEvent && (
+            <div className="fixed inset-0 z-50 flex items-start justify-center p-6">
+              <div className="absolute inset-0 bg-black opacity-50" onClick={() => setActiveEvent(null)}></div>
+              <div className="relative bg-dark-900 border border-dark-700 rounded shadow-lg max-w-3xl w-full p-6 z-10">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-lg font-semibold">Event Details</h3>
+                  <button className="btn-secondary" onClick={() => setActiveEvent(null)}>Close</button>
+                </div>
+                <div className="space-y-3 text-sm">
+                  <div>
+                    <strong>Method:</strong> <span className="font-mono">{activeEvent.method}</span>
+                    {' '}<strong>Path:</strong> <span className="font-mono">{activeEvent.path}</span>
+                  </div>
+                  <div>
+                    <strong>Source IP:</strong> {activeEvent.source_ip} {' '}
+                    <strong>Status:</strong> {activeEvent.status}
+                  </div>
+                  <div>
+                    <strong>Has Media:</strong> {activeEvent.has_media ? 'Yes' : 'No'}
+                  </div>
+                  <div>
+                    <strong>Params:</strong>
+                    <pre className="overflow-auto max-h-40 p-2 bg-dark-800 rounded mt-1">{JSON.stringify(activeEvent.params || {}, null, 2)}</pre>
+                  </div>
+                  <div>
+                    <strong>Headers:</strong>
+                    <pre className="overflow-auto max-h-40 p-2 bg-dark-800 rounded mt-1">{JSON.stringify(activeEvent.headers || {}, null, 2)}</pre>
+                  </div>
+                  <div>
+                    <strong>Body:</strong>
+                    <pre className="overflow-auto max-h-40 p-2 bg-dark-800 rounded mt-1">{activeEvent.body ? JSON.stringify(activeEvent.body, null, 2) : '—'}</pre>
+                  </div>
+                  <div>
+                    <strong>Body Hash:</strong> <span className="font-mono">{activeEvent.body_hash || '—'}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Pagination */}
           <div className="flex items-center justify-between mt-4 pt-4 border-t border-dark-700">

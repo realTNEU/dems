@@ -1,4 +1,9 @@
-const API_BASE_URL = import.meta.env.VITE_API_URL || '';
+// Prefer explicit VITE_API_URL; fall back to '/api' so the Vite dev server proxy works when
+// no absolute backend URL is provided.
+const rawBase = import.meta.env.VITE_API_URL || '';
+// If a VITE_API_URL is provided, normalize it (strip trailing slash). If not provided,
+// use empty string so fetch calls that start with `/api/...` hit the dev-server proxy.
+const API_BASE_URL = rawBase ? rawBase.replace(/\/$/, '') : '';
 
 class ApiError extends Error {
   constructor(message, status) {

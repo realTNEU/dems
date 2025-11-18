@@ -1,308 +1,123 @@
+
 # Evidence Collector
 
-A dark-themed observability and evidence collection application for digital forensics teams. Automatically collects server logs, sends evidence to a backend, stores it, and visualizes the data in a React frontend for attack analysis.
+A small demo observability / evidence-collection system for learning, testing and developer demos. It's intentionally lightweight and not production hardened.
 
-## 🎯 Overview
+## Overview
 
-This application provides a complete evidence collection and analysis system with the following components:
+This repository provides an end-to-end demo that:
 
-- **Dummy Server**: Express server with 50 programmatically generated API endpoints
-- **Traffic Generator**: Random traffic generator to simulate API calls
-- **Collector**: TypeScript script that collects evidence from server logs
-- **Backend**: TypeScript Node.js API with MongoDB storage
-- **Frontend**: React dashboard with dark theme for data visualization
+- runs a `dummy-server` that logs incoming HTTP requests,
+- optionally generates traffic against that server with `traffic-gen`,
+- stores logs in MongoDB and exposes them via a TypeScript backend API,
+- visualizes events and metrics in a React + Vite frontend.
 
-## 🏗️ Architecture
+Main components
 
-```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Dummy Server  │    │    Backend      │    │    Frontend     │
-│   (Port 4000)   │───▶│   (Port 3000)   │◀───│   (Port 5173)   │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
-                                │
-                                ▼
-                        ┌─────────────────┐
-                        │    MongoDB      │
-                        └─────────────────┘
-```
+- `dummy-server/` — Express app (default port 4000) that receives and logs requests. It now records a redacted `headers` object and a `hasMedia` boolean for POST/PUT requests.
+- `traffic-gen/` — a simple Node.js script that can flood the dummy server with randomized requests for testing.
+- `backend/` — TypeScript Express API (default port 3000) that reads log documents from MongoDB and exposes endpoints for events, metrics, top IPs, and streaming export.
+- `frontend/` — React + Vite dashboard (default port 5173) that shows metrics and a paginated events table.
 
-## 🚀 Quick Start (Windows)
+Quick summary
 
-### Prerequisites
+- Purpose: runnable demo of capturing HTTP requests and exploring them in a dashboard.
+- Not production-ready: lacks authentication, hardened input handling, rate-limiting, and secret management.
 
-- Node.js 18+ 
-- MongoDB (running locally with MongoDB Compass)
-- Git
-- Windows PowerShell or Command Prompt
+## What's new / Important notes
 
-### Setup Instructions
+- The dummy server now persists a redacted `headers` object and a `hasMedia` boolean for POST/PUT requests so the UI can show request headers and whether the request included media.
+- Backend model updated to include `headers` and `hasMedia` fields and the `/api/evidence/events` endpoint returns `params`, `headers`, `body`, `has_media`, and `body_hash` per event.
+- Streaming export endpoint added: `GET /api/evidence/events/export?format=csv|json&limit=N`.
+  - Streams CSV or JSON and supports filters: `path`, `ip`, `method`, `from`, `to`.
+  - `limit` is capped by `EXPORT_MAX_ROWS` (env var) to protect the server.
+- Frontend: events table rows are clickable and open a details modal showing Params, Headers, Body (pretty-printed), Has Media and Body Hash. The export UI supports CSV/JSON and a limit input.
 
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd evidence-collector
-   ```
+## Quick start (local)
 
-2. **Verify MongoDB is running**
-   - Open MongoDB Compass
-   - Connect to `mongodb://localhost:27017`
-   - You should see the connection successful
+Prerequisites
 
-3. **Start Backend (Terminal 1)**
-   ```bash
-   cd backend
-   npm install
-   npm run dev
-   ```
-   - Backend will start on http://localhost:3000
-   - Health check: http://localhost:3000/health
+- Node.js (16+ recommended)
+- MongoDB running locally or remotely (default URI: `mongodb://localhost:27017`)
 
-4. **Start Dummy Server (Terminal 2)**
-   ```bash
-   cd dummy-server
-   npm install
-   npm start
-   ```
-   - Dummy server will start on http://localhost:4000
-   - Health check: http://localhost:4000/health
-   - Logs directly to MongoDB
+Run services (open separate shells)
 
-5. **Start Frontend (Terminal 3)**
-   ```bash
-   cd frontend
-   npm install
-   npm run dev
-   ```
-   - Frontend will start on http://localhost:5173
-   - Open browser to view the dashboard
-
-6. **Generate Traffic (Terminal 4 - Optional)**
-   ```bash
-   cd traffic-gen
-   npm install
-   npm start
-   ```
-   - Generates random API calls to dummy server
-   - Creates evidence data for the dashboard
-
-## 📊 Features
-
-### Dashboard
-- **Real-time Metrics**: Total requests, average response time, unique IPs
-- **Time Series Charts**: Requests over time with interactive filtering
-- **Status Code Distribution**: Pie chart showing HTTP status codes
-- **Top Source IPs**: Table with request counts, error rates, and last seen
-
-### Evidence Table
-- **Interactive Filtering**: Filter by time range, path, method, IP, status code
-- **Pagination**: Navigate through large datasets
-- **Export Functionality**: Export filtered data to CSV or JSON
-- **Real-time Updates**: Live data refresh with loading states
-
-### Data Collection
-- **Multiple Collection Modes**: Middleware mode or log-tail mode
-- **Batch Processing**: Efficient bulk evidence submission
-- **Error Handling**: Retry logic and graceful degradation
-- **Security**: API key authentication and HMAC signatures
-
-## 🔧 Configuration
-
-### Environment Variables
-
-#### Backend
-```env
-PORT=3000
-MONGODB_URI=mongodb://localhost:27017/evidence-collector
-COLLECTOR_API_KEY=default-collector-key
-NODE_ENV=development
-```
-
-#### Traffic Generator
-```env
-SERVER_URL=http://localhost:4000
-RPS=10
-CONCURRENCY=5
-DURATION=300
-```
-
-
-## 📡 API Endpoints
-
-### Data Retrieval
-- `GET /api/evidence/events` - Get filtered events with pagination
-- `GET /api/evidence/metrics/summary` - Get aggregated metrics
-- `GET /api/evidence/ips/top` - Get top source IPs
-
-### Health Checks
-- `GET /health` - Backend health check
-
-## 🧪 Testing
-
-### Run Tests
-```bash
-# Backend tests
-cd backend
-npm test
-
-# Integration tests
-npm run test:integration
-```
-
-### Test Coverage
-- Unit tests for all API endpoints
-- Integration tests for end-to-end flow
-- Error handling and edge cases
-- High-volume data processing
-
-## 🚀 Development Commands (Windows)
-
-### Manual Start (4 terminals)
-
-Open 4 separate PowerShell or Command Prompt windows and run:
-
+Backend (API)
 ```powershell
-# Terminal 1: Backend
 cd evidence-collector\backend
 npm install
 npm run dev
+```
+Health: http://localhost:3000/health
 
-# Terminal 2: Dummy Server
+Dummy server (receives & logs requests)
+```powershell
 cd evidence-collector\dummy-server
 npm install
 npm start
+```
+Health: http://localhost:4000/health
 
-# Terminal 3: Frontend
+Frontend (dashboard)
+```powershell
 cd evidence-collector\frontend
 npm install
 npm run dev
+```
+Open: http://localhost:5173
 
-# Terminal 4: Traffic Generator (optional)
+Traffic generator (optional)
+```powershell
 cd evidence-collector\traffic-gen
 npm install
 npm start
 ```
+Tip: set `SERVER_URL=http://localhost:4000` when running locally.
 
-### Service URLs
-- **Frontend Dashboard**: http://localhost:5173
-- **Backend API**: http://localhost:3000
-- **Dummy Server**: http://localhost:4000
-- **MongoDB**: mongodb://localhost:27017
+Environment variables of interest
 
-### Health Checks
-- **Backend**: http://localhost:3000/health
-- **Dummy Server**: http://localhost:4000/health
+- Backend:
+  - `PORT` — port for the API (default: 3000)
+  - `MONGODB_URI` — MongoDB connection string
+  - `EXPORT_MAX_ROWS` — maximum rows allowed by the export endpoint (default 10000)
 
-## 📁 Project Structure
+- Frontend (Vite):
+  - `VITE_API_URL` — optional base URL for the backend API (if unset, the frontend relies on the dev server proxy and uses `/api` paths)
 
-```
-evidence-collector/
-├── backend/                 # TypeScript Node.js API
-│   ├── src/
-│   │   ├── controllers/     # API controllers
-│   │   ├── models/         # MongoDB models
-│   │   ├── routes/         # Express routes
-│   │   └── utils/         # Database utilities
-│   └── __tests__/         # Test files
-├── frontend/               # React Vite application
-│   ├── src/
-│   │   ├── components/    # React components
-│   │   ├── services/     # API services
-│   │   └── utils/        # Utility functions
-├── dummy-server/          # Express test server
-├── traffic-gen/           # Traffic generator
-└── .env                  # Environment variables
+## API (selected endpoints)
+
+- GET `/api/evidence/events` — list events with query filters `path`, `ip`, `method`, `from`, `to`, `limit`, `offset`.
+  - Response events include `params` (query), `headers` (redacted headers object), `body`, `has_media` and `body_hash`.
+- GET `/api/evidence/events/export` — streaming export. Query `format=csv|json`, `limit` and same filters as above.
+- GET `/api/evidence/metrics/summary` — aggregated metrics by time window.
+- GET `/api/evidence/ips/top` — top source IPs.
+
+## Running tests (backend)
+
+```powershell
+cd evidence-collector\backend
+npm install
+npm test
 ```
 
-## 🔒 Security Considerations
+Notes: the tests use `mongodb-memory-server` which downloads a MongoDB binary during install. On Windows behind strict proxies you may need to configure a mirror or allow the binary download (see `mongodb-memory-server` docs).
 
-- **Data Redaction**: Sensitive headers are automatically redacted
-- **Body Hashing**: Request bodies are hashed instead of stored
-- **Input Validation**: All inputs are validated and sanitized
-- **CORS Protection**: Cross-origin requests are properly configured
+## Troubleshooting
 
-## 🚨 Troubleshooting
+- Frontend showing 404s for `/api/...` routes? Ensure the frontend `VITE_API_URL` is unset to use the dev-server proxy or set it to the full backend URL (for example `http://localhost:3000`). Also check the backend is running on the expected port.
+- Tests failing due to missing jest types or ts-jest errors? Run `npm install` in the `backend/` folder to install dev dependencies.
 
-### Common Issues
+## Next / optional improvements
 
-1. **MongoDB Connection Failed**
-   ```powershell
-   # Check if MongoDB is running
-   mongosh --eval "db.runCommand('ping')"
-   
-   # Start MongoDB service (Windows)
-   net start MongoDB
-   # or restart from Services.msc
-   ```
+- Include headers/has_media in the streaming export output (CSV/JSON) — currently CSV exports core fields; JSON export includes query and body hash. I can extend CSV/JSON to include headers and has_media if you want.
+- Add a `docker-compose.yml` to launch MongoDB + backend + frontend for a one-command demo.
+- Add a small integration test to assert the `/api/evidence/events` endpoint returns `headers` and `has_media` for seeded documents.
+- Remove committed `node_modules/` and add `.gitignore` entries (I can prepare a cleanup patch).
 
-2. **Frontend Not Loading**
-   ```powershell
-   # Check if backend is running
-   curl http://localhost:3000/health
-   
-   # Check frontend logs
-   cd frontend
-   npm run dev
-   ```
+## Contributing
 
-3. **No Data in Dashboard**
-   ```powershell
-   # Check if traffic generator is running
-   cd traffic-gen
-   npm start
-   
-   # Verify dummy server is receiving requests
-   curl http://localhost:4000/health
-   ```
-
-4. **Port Conflicts**
-   ```powershell
-   # Check what's using a port
-   netstat -ano | findstr :3000
-   
-   # Kill process using port (replace PID with actual process ID)
-   taskkill /PID <PID> /F
-   ```
-
-### Performance Tuning
-
-- **MongoDB Indexes**: Optimized for common query patterns
-- **Batch Processing**: Configurable batch sizes for evidence collection
-- **Connection Pooling**: Efficient database connections
-- **Caching**: Frontend caching for better performance
-
-## 📈 Monitoring
-
-### Health Checks
-- Backend: `http://localhost:3000/health`
-- Dummy Server: `http://localhost:4000/health`
-- Collector: `http://localhost:8080/health` (middleware mode)
-
-### Metrics
-- Request count and response times
-- Error rates and status codes
-- Source IP analysis
-- System resource usage
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests for new functionality
-5. Submit a pull request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🆘 Support
-
-For issues and questions:
-1. Check the troubleshooting section
-2. Review the API documentation
-3. Open an issue on GitHub
-4. Contact the development team
+- Fork, create a branch, add tests and open a PR. If you'd like me to make additional doc edits (docker-compose, CONTRIBUTING.md or export changes), say which and I'll implement them.
 
 ---
 
-**Note**: This system is designed for forensics and analysis of server logs only. Do not use to exfiltrate user content or credentials. Respect privacy and applicable laws.
+If you'd like a shorter quickstart or a Docker compose file next, tell me which and I will add it.

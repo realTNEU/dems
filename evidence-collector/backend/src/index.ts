@@ -64,4 +64,10 @@ process.on('SIGINT', async () => {
   process.exit(0);
 });
 
-startServer();
+// Only start the server when this file is run directly. This allows tests to import the app
+// without automatically starting the server.
+if (require.main === module) {
+  startServer();
+}
+
+export { app, startServer };

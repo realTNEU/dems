@@ -9,7 +9,9 @@ export interface ILogEntry extends Document {
   responseTime: number;
   sourceIP: string;
   userAgent: string;
+  headers: any;
   body: any;
+  hasMedia?: boolean;
   createdAt: Date;
 }
 
@@ -46,9 +48,17 @@ const logEntrySchema = new Schema<ILogEntry>({
     type: String,
     default: ''
   },
+  headers: {
+    type: Schema.Types.Mixed,
+    default: {}
+  },
   body: {
     type: Schema.Types.Mixed,
     default: null
+  },
+  hasMedia: {
+    type: Boolean,
+    default: false
   },
   createdAt: {
     type: Date,
